@@ -1,0 +1,13 @@
+---
+- name: Retrieve a file from a machine
+  hosts: bender
+  connection: ansible.builtin.ssh
+  gather_facts: true # default is true
+
+  tasks:
+
+  - name: Descargar archivo
+    ansible.builtin.fetch:
+     src: ~/challenge
+     dest: ~/challenge
+     flat: yes
